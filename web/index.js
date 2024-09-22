@@ -14,11 +14,6 @@ app.get("/", function(req, res) {
   res.send("Hello world!");
 });
 
-const metaInfo = execSync(
-  'curl -s https://speed.cloudflare.com/meta | awk -F\\" \'{print $26"-"$18}\' | sed -e \'s/ /_/g\'',
-  { encoding: 'utf-8' }
-);
-const ISP = metaInfo.trim();
 
 
 // run-nezha
