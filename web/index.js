@@ -73,22 +73,4 @@ function runWeb() {
   });
 }
 
-// run-server
-function runServer() {
-  let command2 = '';
-  if (ARGO_AUTH.match(/^[A-Z0-9a-z=]{120,250}$/)) {
-    command2 = `nohup ./server tunnel --edge-ip-version auto --no-autoupdate --protocol http2 run --token ${ARGO_AUTH} >/dev/null 2>&1 &`;
-  } else {
-    command2 = `nohup ./server tunnel --edge-ip-version auto --config tunnel.yml run >/dev/null 2>&1 &`;
-  }
-
-  exec(command2, (error) => {
-    if (error) {
-      console.error(`server running error: ${error}`);
-    } else {
-      console.log('server is running');
-    }
-  });
-}
-
 app.listen(port, () => console.log(`App is listening on port ${port}!`));
