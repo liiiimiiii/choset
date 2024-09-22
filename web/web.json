@@ -4,26 +4,23 @@
         "error": "/dev/null",
         "loglevel": "none"
     },
-    "inbounds":[
+    "inbounds": [
         {
-            "port":8080,
-            "listen":"0.0.0.0",
-            "protocol":"vless",
-            "settings":{
-                "clients":[
+            "port": 8080,
+            "listen": "0.0.0.0",
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
                     {
-                        "id":"xyz",
-                        "level":0
+                        "id": "xyz",
+                        "alterId": 0,
+                        "level": 0
                     }
-                ],
-                "decryption":"none"
+                ]
             },
-            "streamSettings":{
-                "network":"ws",
-                "security":"none",
-                "wsSettings":{
-                    "path":"/xyz"
-                }
+            "streamSettings": {
+                "network": "tcp",
+                "security": "none"
             }
         }
     ],
