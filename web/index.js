@@ -13,13 +13,6 @@ app.get("/", function(req, res) {
 });
 
 
-app.use('/xyz', createProxyMiddleware({
-  target: 'http://localhost:8080',
-  changeOrigin: true,
-  pathRewrite: {
-    '^/xyz': '/',
-  }
-}));
 
 
 // run-nezha
