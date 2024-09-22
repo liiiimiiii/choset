@@ -21,11 +21,6 @@ app.use('/xyz', createProxyMiddleware({
   }
 }));
 
-const metaInfo = execSync(
-  'curl -s https://speed.cloudflare.com/meta | awk -F\\" \'{print $26"-"$18}\' | sed -e \'s/ /_/g\'',
-  { encoding: 'utf-8' }
-);
-const ISP = metaInfo.trim();
 
 // run-nezha
 let NEZHA_TLS = '';
